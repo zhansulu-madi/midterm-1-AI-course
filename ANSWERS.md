@@ -96,25 +96,25 @@ Residual risk: Lower L accuracy on damaged scans. We will smooth it out by autom
 
 ### Q1
 
-Number:
-Why (at most 40 words):
+Number: 2.34
+Why (at most 40 words): Since tokens in English for output are 6 times more expensive than tokens for input (2 for input and 12 for output as it said in Model M). Since in the Kazakh language, if we compare with English, slightly fewer tokens are used for output than for input, we see decrease in the total cost of tokens.
 
 ### Q2
 
-Number:
-Why (at most 40 words):
+Number: 368
+Why (at most 40 words): It will be retrived, as the offer ends before the limit of 512 tokens expires, because the offer starts on the 368 token and has a length less than 20. Since it fits within the limit, there will be no errors.
 
 ### Q3
 
-Number:
-Why (at most 40 words):
+Number: 59.8%
+Why (at most 40 words): The difference is that top-p cuts off the unlikely tail of tokens based on cumulative probability, while lowering the temperature changes the scale of all logits, that is, it makes the distribution without strictly zeroing out the lower tokens.
 
 ### Q4
 
-Number:
-Why (at most 40 words):
+Number: 24.2%
+Why (at most 40 words): Since logical tasks are not based on single training facts that can be memorized, we exclude the sequences of multiplication and arithmetic. And also system prompts will not be able to prevent the hallucination of missing facts.
 
 ### Q5
 
-Number:
-Why (at most 40 words):
+Number: 33800
+Why (at most 40 words): The first message is been paid 25 times. Promt caching reduces the cost of repeating historical tokens by up to 90% over these 25 times, turning the quadratic cumulative scaling of the context into an almost linear cost.
