@@ -64,12 +64,33 @@ It is better to add a check of the actual correctness of the answers, as models 
 
 | pipeline | overall accuracy | weakest cell (language, condition) | accuracy there | lower | upper | annual cost |
 |---|---|---|---|---|---|---|
-| H | | | | | | |
-| L | | | | | | |
+| H | 0.9056 | RU, degraded | 0.8667 | 0.7032 | 0.9469 | 14404.73 |
+| L | 0.8444 | KK, degraded | 0.6667 | 0.4878 | 0.8077 | 21600 |
 
-Personal-data pages per year sent abroad under H:
+Personal-data pages per year sent abroad under H: 689850
 
 ### 2b. Memo (at most 300 words)
+
+Internal memo
+
+Topic: Choosing a pipeline for scan recognition and compliance with the law on PD1. 
+To: Head of the Operations Department
+From: AI Analytics
+
+Overall accuracy indicators hide problems on complex scans. Pipeline H showed the worst accuracy in the RU, degraded cell - 0.8667 (95% Wilson interval: [0.7032, 0.9469]). Pipeline L did the worst with KK, degraded - 0.6667 (95% interval: [0.4878, 0.8077]). Scans from these categories are highly likely to require manual verification.
+
+The situation with personal data based on the Law of Kazakhstan on Personal Data (No. 94-B) is as follows: about 689,850 pages per year contain full name and IIN. 
+
+Where does the scan go? With H, the data is sent abroad to a foreign data center, and with L, it remains inside the bank in the Republic of Kazakhstan.  
+Who keeps it? With H, storage is in a third-party foreign company, and with L, only in our bank.   
+How long? For H, this is unknown without an audit of the company, and for L, the deadline is determined by the bank's regulations.  
+
+To summarize, sending IIN abroad with H creates serious legal risks under the Law of the Republic of Kazakhstan "On Personal Data". 
+
+Verifiable security measures: If we use H, you need a local script to remove the IIN and full name from the image before sending it. At the same time, for L, there is no such risk initially.
+
+I recommend Pipeline L. Although it will be more expensive ($21,600 per year instead of $14,404 for H), it guarantees the localization of data in the Republic of Kazakhstan. 
+Residual risk: Lower L accuracy on damaged scans. We will smooth it out by automatically sending scans with low confidence of the model for manual verification to the operators.
 
 ## Part 3: Explain your own numbers
 
