@@ -11,6 +11,8 @@ Fingerprint: 2b97b42d
 
 (About half a page: which assistants or tools you used and for what. If you used none, say so.)
 
+Gemini was used to design the memo format and to calculate the softmax probabilities in Q3 in task 3.
+
 ## Part 1: Retrieval and cost decision
 
 ### 1a. Metrics (all 60 questions)
